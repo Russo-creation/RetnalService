@@ -22,4 +22,5 @@ public class RentalController {
         rentalservice.returnMovie(id);
         return ResponseEntity.noContent().build();
     }
+
 }
