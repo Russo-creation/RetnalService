@@ -18,7 +18,12 @@ public class RentalService {
     }
 
     public void returnMovie(Long id) {
-        String movieResourceUrl = String.format("http://localhost:8080/movie/available/" + id, Void.class);
+        String movieResourceUrl = ("http://localhost:8080/movie/available_true/" + id);
+        restTemplate.put(movieResourceUrl, null);
+    }
+
+    public void rentMovie(Long id) {
+        String movieResourceUrl = ("http://localhost:8080/movie/available_false/" + id);
         restTemplate.put(movieResourceUrl, null);
     }
 }

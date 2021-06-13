@@ -17,9 +17,15 @@ public class RentalController {
         return ResponseEntity.ok(rentalservice.findMovieById(id));
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity returnMovie(@PathVariable Long id) {
+    @PutMapping("/movie_available_true/{id}")
+    public ResponseEntity setIsAvailableTrue(@PathVariable Long id) {
         rentalservice.returnMovie(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/movie_available_false/{id}")
+    public ResponseEntity setIsAvailableFalse(@PathVariable Long id) {
+        rentalservice.rentMovie(id);
         return ResponseEntity.noContent().build();
     }
 
