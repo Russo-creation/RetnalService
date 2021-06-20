@@ -1,11 +1,19 @@
 package com.example.rentalservice;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class Movie {
 
+    @ApiModelProperty(notes="This is id of the movie", required = true, value = "some id", example = "1")
     private Long id;
+
+    @ApiModelProperty(notes="This is name of the movie", required = true, value = "name of movie", example = "Matrix")
     private String name;
+
+    @ApiModelProperty(notes="This is category of the movie", required = true, value = "category enum", example = "SCI_FI")
     private MovieEnumCategory category;
 
+    @ApiModelProperty(notes="This is availability of the movie", required = true, value = "boolean availability", example = "true")
     private Boolean isAvailable;
 
     public Movie() {
